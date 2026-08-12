@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://f5yct67kcv-source.github.io/webseite-johann-vonarb/sitemap.xml

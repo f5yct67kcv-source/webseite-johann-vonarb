@@ -1,0 +1,24 @@
+.DS_Store
+
+# Obsidian-Projektnotizen bleiben privat im Vault, nicht auf GitHub
+2026-08-01 Cranio Webseite.md
+2026-08-01 Cranio Webseite Design-Entscheide.md
+Google-Setup.md
+
+# Das Repo ist oeffentlich. Interne Arbeitsunterlagen bleiben lokal:
+# PRODUCT.md haelt Positionierung, offene Qualifikationen und Auftragskontext fest.
+PRODUCT.md
+DESIGN.md
+DESIGN.sidecar.md
+.impeccable/
+
+# Reste der alten Fassung: bleiben lokal liegen, gehen aber nicht ins
+# oeffentliche Repo. Die drei Bilder sind KI-generiert und zeigen weder
+# Johann noch seine Praxis; im Netz koennte sie jemand fuer echt halten.
+# Die Hanken-Schriften stammen aus der alten Gestaltung und werden nicht
+# mehr geladen.
+assets/img/hero.jpg
+assets/img/portrait.jpg
+assets/img/raum.jpg
+assets/fonts/hanken-var.woff2
+assets/fonts/hanken-var-italic.woff2
