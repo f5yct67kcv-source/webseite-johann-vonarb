@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de-CH" data-knopf="terracotta" data-band="lehm" data-verlauf="ruhig" data-anlass="zeilen">
+<html lang="de-CH" data-knopf="terracotta" data-band="lehm" data-verlauf="ruhig" data-art="welle" data-anlass="zeilen">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,6 +84,66 @@
   --bandflaeche: linear-gradient(180deg, rgba(51, 33, 28, 0.09) 0%, rgba(51, 33, 28, 0.17) 100%);
   --bandton: #ddb99f;
   --text-leise: #563a30;
+}
+
+/* ---- Verlaufsart ----
+   "durch": eine Rampe ueber die ganze Seite.
+   "welle": jeder Abschnitt setzt minimal dunkler an und laeuft gleichmaessig
+            ins Hellere, so entsteht beim Scrollen eine ruhige Welle.
+   "licht": jeder Abschnitt ist eine ausgeleuchtete Flaeche, hell in der
+            oberen Haelfte, zu den Raendern hin waermer.
+   ============================================================ */
+
+[data-art="welle"] body,
+[data-art="licht"] body { background: var(--sand-hell); }
+
+/* Die Welle: der Auftakt laeuft von hell nach unten ins Waermere, jeder
+   folgende Abschnitt setzt eine Spur dunkler an und laeuft gleichmaessig
+   ins Hellere zurueck. Die Ansaetze wandern nach unten Stufe um Stufe
+   tiefer, aber so knapp, dass die Kante nicht als Fehler liest. */
+[data-art="welle"] .auftakt  { background: linear-gradient(179deg, var(--h1) 0%, var(--d1) 100%); }
+[data-art="welle"] #therapie { background: linear-gradient(179deg, var(--d1) 0%, var(--h2) 100%); }
+[data-art="welle"] #anlaesse { background: linear-gradient(179deg, var(--d2) 0%, var(--h3) 100%); }
+[data-art="welle"] .band     { background: linear-gradient(179deg, var(--d3) 0%, var(--h3) 100%); }
+[data-art="welle"] #person   { background: linear-gradient(179deg, var(--d3) 0%, var(--h4) 100%); }
+[data-art="welle"] #fragen   { background: linear-gradient(179deg, var(--d4) 0%, var(--h4) 100%); }
+[data-art="welle"] .ablauf .zeichen { background: transparent; }
+[data-art="welle"] .ablauf::before { left: 12px; }
+
+/* Das Licht: ein weicher Schimmer wie im Bildplatz, in jedem Abschnitt neu. */
+[data-art="licht"] .auftakt,
+[data-art="licht"] #therapie,
+[data-art="licht"] #anlaesse,
+[data-art="licht"] .band,
+[data-art="licht"] #person,
+[data-art="licht"] #fragen {
+  background:
+    radial-gradient(72% 58% at 26% 12%, var(--l-hell) 0%, rgba(255, 255, 255, 0) 62%),
+    linear-gradient(168deg, var(--l-mitte) 0%, var(--l-tief) 100%);
+}
+[data-art="licht"] .auftakt { background-size: 100% 100%; }
+
+/* Stufen je Verlaufsstaerke: d = Ansatz oben, h = Auslauf unten. */
+[data-verlauf="ruhig"] {
+  --d1: #f7ede6; --h1: #fdf8f5;
+  --d2: #f5eae2; --h2: #fcf6f2;
+  --d3: #f3e7de; --h3: #fbf4ef;
+  --d4: #f1e4da; --h4: #faf2ec;
+  --l-hell: rgba(255, 252, 250, 0.9); --l-mitte: #f9efe9; --l-tief: #f1e0d5;
+}
+[data-verlauf="mutig"] {
+  --d1: #f4e6da; --h1: #fdf8f4;
+  --d2: #f1e1d3; --h2: #fbf4ee;
+  --d3: #eedccc; --h3: #f9f0e9;
+  --d4: #ebd7c5; --h4: #f7ece3;
+  --l-hell: rgba(255, 253, 251, 0.95); --l-mitte: #f8ece4; --l-tief: #e7cdb8;
+}
+[data-verlauf="kraeftig"] {
+  --d1: #eeddcd; --h1: #fdf8f4;
+  --d2: #ead5c1; --h2: #fbf3ec;
+  --d3: #e5ccb5; --h3: #f8eee5;
+  --d4: #e0c3a9; --h4: #f5e8dd;
+  --l-hell: rgba(255, 254, 252, 1); --l-mitte: #f7e9de; --l-tief: #ddb99e;
 }
 
 /* ---- Schrift: Marcellus fuer Titel, Schibsted Grotesk fuer den Lauf ---- */
@@ -316,6 +376,8 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
 
 /* ---- Kontakt ---- */
 
+[data-art="welle"] .kontakt { --seitenende: var(--h4); }
+[data-art="licht"] .kontakt { --seitenende: var(--l-tief); }
 .kontakt {
   background:
     radial-gradient(66% 52% at 82% 16%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0) 68%),
@@ -373,6 +435,12 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
     <button data-setzt="verlauf" data-wert="ruhig" aria-pressed="true">Ruhig</button>
     <button data-setzt="verlauf" data-wert="mutig">Mutiger</button>
     <button data-setzt="verlauf" data-wert="kraeftig">Kräftig</button>
+  </div>
+  <div class="wahl-gruppe">
+    <b>Verlaufsart</b>
+    <button data-setzt="art" data-wert="welle" aria-pressed="true">Welle</button>
+    <button data-setzt="art" data-wert="licht">Licht</button>
+    <button data-setzt="art" data-wert="durch">Durchgehend</button>
   </div>
   <div class="wahl-gruppe">
     <b>Anlässe</b>
@@ -561,7 +629,7 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
 // Welt und Schrift lassen sich auch ueber die Adresse setzen: ?w=wald&s=petrona
 (function () {
   var p = new URLSearchParams(location.search);
-  [['k', 'knopf'], ['b', 'band'], ['v', 'verlauf'], ['a', 'anlass']].forEach(function (paar) {
+  [['k', 'knopf'], ['b', 'band'], ['v', 'verlauf'], ['t', 'art'], ['a', 'anlass']].forEach(function (paar) {
     var wert = p.get(paar[0]);
     if (!wert) return;
     var knopf = document.querySelector('button[data-setzt="' + paar[1] + '"][data-wert="' + wert + '"]');
