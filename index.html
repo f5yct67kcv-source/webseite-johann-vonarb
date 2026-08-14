@@ -180,7 +180,7 @@
 
   --breite: 78rem;
   --rand: clamp(1.25rem, 5vw, 4.5rem);
-  --takt: clamp(4.5rem, 8vw, 8.5rem);
+  --takt: clamp(3.75rem, 6.5vw, 7rem);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -436,7 +436,7 @@ h1, h2, h3 {
   list-style: none;
   display: grid;
   gap: 2rem 3rem;
-  margin-block: clamp(3.5rem, 7vw, 5.5rem) 0;
+  margin-block: clamp(3rem, 5.5vw, 4.5rem) 0;
   padding-block: 2.5rem 0;
   border-top: 1px solid var(--linie);
 }
@@ -477,7 +477,7 @@ h2 { font-size: clamp(1.85rem, 1.4rem + 2vw, 2.75rem); line-height: 1.15; max-wi
 
 /* ---- Anlaesse --------------------------------------------------------- */
 
-.anlaesse { display: grid; gap: 0 clamp(2rem, 5vw, 4.5rem); margin-top: 3rem; }
+.anlaesse { display: grid; gap: 0 clamp(2rem, 5vw, 4.5rem); margin-top: 2.25rem; }
 @media (min-width: 52rem) { .anlaesse { grid-template-columns: 1fr 1fr; } }
 .anlass { padding: 1.75rem 0; border-top: 1px solid var(--linie); }
 .anlass h3 { font-family: 'Schibsted Grotesk', sans-serif; font-size: 1.125rem; font-weight: 600; letter-spacing: 0; margin-bottom: 0.4rem; }
@@ -511,7 +511,7 @@ h2 { font-size: clamp(1.85rem, 1.4rem + 2vw, 2.75rem); line-height: 1.15; max-wi
 
 /* ---- Fragen ----------------------------------------------------------- */
 
-.fragen { margin-top: 2.5rem; }
+.fragen { margin-top: 2rem; }
 details { border-top: 1px solid var(--linie); }
 details:last-of-type { border-bottom: 1px solid var(--linie); }
 summary {
@@ -551,7 +551,7 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
     var(--band-mitte) 120px,
     var(--band-mitte) 55%,
     var(--band-tief) 100%);
-  padding-block: clamp(9rem, 14vw, 12rem) clamp(4.5rem, 9vw, 8rem);
+  padding-block: clamp(8rem, 12vw, 10rem) clamp(2.5rem, 4vw, 3.5rem);
 }
 .kontakt .anriss { color: var(--band-leise); max-width: 44ch; margin: 0 0 2.5rem; font-size: 1.125rem; }
 .kontakt .handlung, .kontakt .ruf + .ruf-still { margin-left: 2rem; }
@@ -561,14 +561,14 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
 .kontakt .ruf { background: var(--text); color: var(--sand-hell); border-color: var(--text); }
 .kontakt .ruf:hover { background: #241610; }
 
-.karte { display: grid; gap: 2.25rem 3rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(51, 33, 28, 0.22); }
+.karte { display: grid; gap: 2rem 3rem; margin-top: 2.5rem; padding-top: 2.25rem; border-top: 1px solid rgba(51, 33, 28, 0.22); }
 @media (min-width: 48rem) { .karte { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .karte dt { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--band-leise); margin-bottom: 0.65rem; }
 .karte dd { margin: 0; line-height: 1.55; overflow-wrap: anywhere; }
 .karte dd a { text-decoration-color: rgba(51, 33, 28, 0.4); }
 .karte .weit { grid-column: 1 / -1; max-width: 46ch; }
 
-.fuss { background: var(--band-tief); padding-block: 2.5rem 3rem; font-size: 0.875rem; color: var(--band-leise); }
+.fuss { background: var(--band-tief); padding-block: 1.75rem 2rem; font-size: 0.875rem; color: var(--band-leise); }
 .fuss > div { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: baseline; }
 .fuss p { margin: 0; }
 .fuss nav { display: flex; gap: 2rem; }
@@ -644,7 +644,7 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
     <div class="bahn auftakt-satz">
       <div>
         <h1>Craniosacral Therapie in Fulenbach</h1>
-        <p class="anriss">Sanfte Körpertherapie bei Kopfschmerzen, Verspannungen, Stress und Schlafproblemen. Seit über zwanzig Jahren selbständig, heute in Fulenbach zwischen Olten und Zofingen. Jede Behandlung beginnt mit einem Gespräch.</p>
+        <p class="anriss">Sanfte Körpertherapie bei Kopfschmerzen, Verspannungen, Stress und Schlafproblemen. Seit über zwanzig Jahren selbständig, heute in Fulenbach zwischen Olten und Zofingen.</p>
         <div class="handlung">
           <a class="ruf" href="tel:+41622162939">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
@@ -672,8 +672,8 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
       </li>
       <li>
         <svg class="zeichen" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="7" r="3"/><path d="M3 20.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><circle cx="17.5" cy="12.5" r="2.2"/><path d="M14 20.5c0-2 1.6-3.5 3.5-3.5s3.5 1.5 3.5 3.5"/></svg>
-        <strong>Für jedes Alter</strong>
-        <p>Vom Säugling bis ins hohe Alter, in der Schwangerschaft und danach.</p>
+        <strong>Vom Säugling bis ins hohe Alter</strong>
+        <p>Auch in der Schwangerschaft und in der Zeit danach.</p>
       </li>
     </ul>
   </section>
@@ -691,28 +691,28 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
   <section class="abschnitt bahn" id="anlaesse" aria-labelledby="anlaesse-titel">
     <div class="zweispalt">
       <h2 id="anlaesse-titel">Weshalb Menschen kommen</h2>
-      <p class="satz leise">Craniosacral Therapie wird begleitend und vorbeugend eingesetzt. Sie ersetzt keine ärztliche Behandlung, kann diese aber sinnvoll ergänzen.</p>
+      <p class="satz leise">Menschen kommen unter anderem mit diesen Anliegen. Craniosacral Therapie wird begleitend und vorbeugend eingesetzt, sie ersetzt keine ärztliche Behandlung und kann diese sinnvoll ergänzen.</p>
     </div>
     <div class="anlaesse reihe">
       <div class="anlass">
         <h3>Kopfschmerzen und Migräne</h3>
-        <p>Entlastung bei wiederkehrenden Spannungskopfschmerzen und Migräne.</p>
+        <p>Wiederkehrende Spannungskopfschmerzen und Migräne.</p>
       </div>
       <div class="anlass">
         <h3>Rücken und Nacken</h3>
-        <p>Verspannungen am Bewegungsapparat sanft lösen.</p>
+        <p>Verspannungen im Rücken, im Nacken und im Schultergürtel.</p>
       </div>
       <div class="anlass">
         <h3>Stress und Erschöpfung</h3>
-        <p>Das Nervensystem zur Ruhe bringen, bei Belastung und Burnout-Prävention.</p>
+        <p>Anhaltende Belastung, innere Unruhe, Erschöpfung.</p>
       </div>
       <div class="anlass">
         <h3>Schlafprobleme</h3>
-        <p>Unterstützung beim Ein- und Durchschlafen.</p>
+        <p>Schwierigkeiten beim Ein- und beim Durchschlafen.</p>
       </div>
       <div class="anlass">
         <h3>Kiefer und Zähneknirschen</h3>
-        <p>Bei Kieferverspannungen und craniomandibulärer Dysfunktion.</p>
+        <p>Kieferverspannungen und Zähneknirschen, auch bei craniomandibulärer Dysfunktion.</p>
       </div>
       <div class="anlass">
         <h3>Schwangerschaft und Babys</h3>
@@ -751,7 +751,7 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
     <div class="zweispalt">
       <div>
         <h2 id="person-titel">Johann von Arb</h2>
-        <p class="signatur"><strong>Craniosacral Therapeut</strong><span>Murgenthalerstrasse 8, Fulenbach</span></p>
+        <p class="signatur"><strong>Craniosacral Therapeut</strong><span>Seit über zwanzig Jahren selbständig</span></p>
       </div>
       <div class="satz">
         <p>Ich arbeite seit über zwanzig Jahren selbständig als Craniosacral Therapeut, an verschiedenen Standorten und heute in Fulenbach. Ich begleite Menschen mit sanfter Körperarbeit. Was mich an der Craniosacral Therapie überzeugt: Sie zwingt dem Körper nichts auf, sondern gibt ihm Raum, sich selbst zu regulieren.</p>
