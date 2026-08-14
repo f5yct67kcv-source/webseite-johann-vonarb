@@ -68,10 +68,8 @@
     #f4e9df 62%, #fbf5f0 75%,
     #f2e5da 87%, #f0e1d5 100%);
   --seitenende: #f0e1d5;
-  --bandton: #f9f2ec;
+  --bandton: #f8efe8;
   --schimmer: radial-gradient(62% 56% at 78% 18%, rgba(238, 217, 204, 0.9) 0%, rgba(238, 217, 204, 0) 68%);
-  --bandflaeche: linear-gradient(180deg, rgba(51, 33, 28, 0.05) 0%, rgba(51, 33, 28, 0.09) 100%);
-  --bandton: #eddccf;
   --text-leise: #7a5c50;
 }
 [data-verlauf="mutig"] {
@@ -81,10 +79,8 @@
     #eddac7 62%, #f9f1e9 75%,
     #ead4bf 87%, #e7cfb8 100%);
   --seitenende: #e7cfb8;
-  --bandton: #f7efe7;
+  --bandton: #f3e6da;
   --schimmer: radial-gradient(72% 64% at 80% 12%, rgba(235, 209, 193, 0.7) 0%, rgba(238, 217, 204, 0) 72%);
-  --bandflaeche: linear-gradient(180deg, rgba(51, 33, 28, 0.07) 0%, rgba(51, 33, 28, 0.13) 100%);
-  --bandton: #e7cebd;
   --text-leise: #6b4d42;
 }
 [data-verlauf="kraeftig"] {
@@ -94,10 +90,8 @@
     #e4c6ab 62%, #f7eee3 75%,
     #debd9d 87%, #d9b492 100%);
   --seitenende: #d9b492;
-  --bandton: #f6ece2;
+  --bandton: #eedac7;
   --schimmer: radial-gradient(74% 66% at 82% 10%, rgba(230, 196, 174, 0.8) 0%, rgba(238, 217, 204, 0) 74%);
-  --bandflaeche: linear-gradient(180deg, rgba(51, 33, 28, 0.09) 0%, rgba(51, 33, 28, 0.17) 100%);
-  --bandton: #ddb99f;
   --text-leise: #563a30;
 }
 
@@ -303,10 +297,23 @@ h2 { font-size: clamp(1.85rem, 1.4rem + 2vw, 2.75rem); line-height: 1.15; max-wi
 /* ---- Ablauf ---- */
 
 .ablauf { list-style: none; margin: 0; padding: 0; position: relative; }
-.ablauf::before { content: ''; position: absolute; left: 13px; top: 2.4rem; bottom: 1.6rem; width: 1px; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0%, var(--linie) 70%, transparent 100%); }
+/* Die Linie verbindet die Schritte, laeuft aber nicht durch die Zeichen:
+   jeder Schritt zieht sein eigenes Stueck vom eigenen Zeichen zum naechsten.
+   So braucht es keinen ausgestanzten Hintergrund, der auf dem Verlauf
+   immer als heller Fleck sichtbar bliebe. */
 .ablauf li { position: relative; padding: 0 0 2.75rem 3.5rem; }
 .ablauf li:last-child { padding-bottom: 0; }
-.ablauf .zeichen { position: absolute; left: 0; top: 0.05rem; background: var(--bandton); padding-block: 0.35rem; box-sizing: content-box; }
+.ablauf .zeichen { position: absolute; left: 0; top: 0.05rem; }
+.ablauf li::after {
+  content: '';
+  position: absolute;
+  left: 12.5px;
+  top: 2.1rem;
+  bottom: 0.35rem;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(51, 33, 28, 0.26), rgba(51, 33, 28, 0.09));
+}
+.ablauf li:last-child::after { content: none; }
 .ablauf h3 { font-family: var(--lauf); font-size: 1.125rem; font-weight: 600; margin-bottom: 0.4rem; letter-spacing: 0; }
 .ablauf p { margin: 0; color: var(--text-leise); font-size: 1rem; max-width: 46ch; }
 
