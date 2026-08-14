@@ -1,7 +1,8 @@
 /* Textseiten (Impressum, Datenschutz).
-   Gleiche Welt wie die Startseite: Sand, Ton, Erde, ein gedämpftes Terracotta.
-   Die Startseite trägt ihr CSS inline, damit sie ohne zweiten Aufruf zeichnet;
-   hier lohnt sich die gemeinsame Datei, weil beide Seiten identisch aussehen. */
+   Gleiche Welt wie die Startseite: warmes Terracotta, heller Knopf mit
+   dunkler Schrift, Marcellus fuer Ueberschriften. Die Startseite traegt
+   ihr CSS inline, damit sie ohne zweiten Aufruf zeichnet; hier lohnt sich
+   die gemeinsame Datei, weil beide Seiten identisch aussehen. */
 
 @font-face {
   font-family: 'Schibsted Grotesk';
@@ -19,18 +20,25 @@
 }
 
 :root {
-  --sand: #f2ece3;
-  --sand-hell: #f9f5ef;
-  --ton: #e6dbcb;
-  --erde: #3a3029;
-  --text: #2c2520;
-  --text-leise: #6a5d50;
-  --terra: #9e4b31;
-  --terra-tief: #843c25;
-  --linie: rgba(44, 37, 32, 0.14);
-  --linie-fein: rgba(44, 37, 32, 0.08);
+  --sand: #f6ebe4;
+  --sand-hell: #fcf4ef;
+  --ton: #eed9cc;
+  --text: #33211c;
+  --text-leise: #6b4d42;
+  --linie: rgba(51, 33, 28, 0.15);
+  --linie-fein: rgba(51, 33, 28, 0.08);
   --breite: 78rem;
   --rand: clamp(1.25rem, 5vw, 4.5rem);
+
+  /* Gleiche Rollen wie auf der Startseite: heller Knopf mit dunkler
+     Schrift und feiner Kontur, satter Ton fuer alles Gezeichnete. */
+  --akzent: #e2b49c;
+  --akzent-tief: #d3a288;
+  --akzent-kontur: #b9825f;
+  --knopf-schrift: #2b1410;
+  --zeichen: #b0553a;
+  --band-tief: #d6a184;
+  --band-leise: #4a3229;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -38,14 +46,15 @@ html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
-  scrollbar-color: var(--text-leise) var(--sand);
+  scrollbar-color: #b59784 #f6ebe4;
   scrollbar-width: thin;
+  background-color: #f2e3d7;
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   margin: 0;
-  background: var(--sand);
+  background: linear-gradient(180deg, #fdf9f5 0%, #f7ede6 55%, #f2e3d7 100%) no-repeat;
   color: var(--text);
   font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: clamp(1.0625rem, 0.99rem + 0.35vw, 1.1875rem);
@@ -53,17 +62,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--erde); color: var(--sand-hell); }
-:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--text); color: var(--sand-hell); }
+:focus-visible { outline: 2px solid var(--zeichen); outline-offset: 3px; border-radius: 4px; }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
-::-webkit-scrollbar-track { background: var(--sand); }
-::-webkit-scrollbar-thumb { background: #b6a894; border: 3px solid var(--sand); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-leise); }
+::-webkit-scrollbar-track { background: #f6ebe4; }
+::-webkit-scrollbar-thumb { background: #cbab97; border: 3px solid #f6ebe4; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #b59784; }
 
-a { color: inherit; text-underline-offset: 3px; text-decoration-color: rgba(44, 37, 32, 0.45); }
-a:hover { text-decoration-color: var(--terra); }
+a { color: inherit; text-underline-offset: 3px; text-decoration-color: rgba(51, 33, 28, 0.45); }
+a:hover { text-decoration-color: var(--zeichen); }
 
-.springmarke { position: absolute; left: -9999px; top: 0; background: var(--erde); color: var(--sand-hell); padding: 0.75rem 1.25rem; z-index: 99; }
+.springmarke { position: absolute; left: -9999px; top: 0; background: var(--text); color: var(--sand-hell); padding: 0.75rem 1.25rem; z-index: 99; }
 .springmarke:focus { left: 0; }
 
 .bahn { max-width: var(--breite); margin-inline: auto; padding-inline: var(--rand); }
@@ -102,21 +111,22 @@ a:hover { text-decoration-color: var(--terra); }
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--terra);
-  color: var(--sand-hell);
+  background: var(--akzent);
+  color: var(--knopf-schrift);
+  border: 1px solid var(--akzent-kontur);
   text-decoration: none;
   padding: 0.8rem 1.4rem;
   border-radius: 999px;
   font-size: 0.9375rem;
   font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 2px 4px rgba(44, 37, 32, 0.12), 0 12px 28px -16px rgba(132, 60, 37, 0.9);
+  box-shadow: 0 2px 4px rgba(51, 33, 28, 0.1), 0 12px 28px -16px rgba(120, 60, 40, 0.75);
   transition: background 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s;
 }
 .ruf:hover {
-  background: var(--terra-tief);
+  background: var(--akzent-tief);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(44, 37, 32, 0.14), 0 18px 34px -18px rgba(132, 60, 37, 0.95);
+  box-shadow: 0 4px 8px rgba(51, 33, 28, 0.12), 0 18px 34px -18px rgba(120, 60, 40, 0.8);
 }
 .ruf:active { transform: translateY(0); }
 .ruf svg { flex: none; }
@@ -126,7 +136,7 @@ a:hover { text-decoration-color: var(--terra); }
 @media (max-width: 30rem) {
   .kopf > div { gap: 0.75rem; padding-inline: 1.25rem; }
   .kopf .marke { font-size: 1rem; letter-spacing: 0.04em; }
-  .kopf .marke span { font-size: 0.625rem; letter-spacing: 0.13em; margin-top: 0.25rem; }
+  .kopf .marke span { font-size: 0.6875rem; letter-spacing: 0.13em; margin-top: 0.25rem; }
   .kopf .ruf { padding: 0.6rem 1rem; min-height: 44px; font-size: 0.875rem; }
   .kopf .ruf svg { display: none; }
 }
@@ -170,4 +180,4 @@ h2 {
 .fuss > div { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: baseline; }
 .fuss p { margin: 0; }
 .fuss nav { display: flex; gap: 2rem; }
-.fuss [aria-current="page"] { color: var(--text); text-decoration-color: var(--terra); }
+.fuss [aria-current="page"] { color: var(--text); text-decoration-color: var(--zeichen); }
