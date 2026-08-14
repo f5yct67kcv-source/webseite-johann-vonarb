@@ -257,7 +257,10 @@ h1, h2, h3 { font-family: var(--titel); font-weight: var(--titel-gewicht); margi
   opacity: 0.75;
 }
 
-.merkmale { list-style: none; display: grid; gap: 2rem 3rem; margin: clamp(3.5rem, 7vw, 5.5rem) 0 0; padding: 2.5rem 0 0; border-top: 1px solid var(--linie); }
+/* Nur die senkrechten Werte setzen: die Kurzschreibweise wuerde das
+   margin-inline: auto und das padding-inline der Bahn ueberschreiben,
+   und der Streifen haenge dann links statt mittig. */
+.merkmale { list-style: none; display: grid; gap: 2rem 3rem; margin-block: clamp(3.5rem, 7vw, 5.5rem) 0; padding-block: 2.5rem 0; border-top: 1px solid var(--linie); }
 @media (min-width: 48rem) { .merkmale { grid-template-columns: repeat(3, 1fr); } }
 .merkmale .zeichen { margin-bottom: 0.9rem; }
 .merkmale strong { display: block; font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
