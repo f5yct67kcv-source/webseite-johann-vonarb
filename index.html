@@ -22,7 +22,7 @@
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Johann von Arb, Craniosacral Therapie">
 <meta property="og:title" content="Craniosacral Therapie in Fulenbach">
-<meta property="og:description" content="Sanfte Körpertherapie bei Kopfschmerzen, Verspannungen, Stress und Schlafproblemen. Seit über zwanzig Jahren in eigener Praxis.">
+<meta property="og:description" content="Sanfte Körpertherapie bei Kopfschmerzen, Verspannungen, Stress und Schlafproblemen. Seit über zwanzig Jahren selbständig, heute in Fulenbach.">
 <meta property="og:url" content="https://f5yct67kcv-source.github.io/webseite-johann-vonarb/">
 <meta property="og:image" content="https://f5yct67kcv-source.github.io/webseite-johann-vonarb/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -554,6 +554,9 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
   padding-block: clamp(9rem, 14vw, 12rem) clamp(4.5rem, 9vw, 8rem);
 }
 .kontakt .anriss { color: var(--band-leise); max-width: 44ch; margin: 0 0 2.5rem; font-size: 1.125rem; }
+.kontakt .handlung, .kontakt .ruf + .ruf-still { margin-left: 2rem; }
+@media (max-width: 30rem) { .kontakt .ruf + .ruf-still { margin-left: 0; display: flex; } }
+.kontakt .ruf-still { border-bottom-color: rgba(51, 33, 28, 0.3); }
 /* Auf der hellen Flaeche ist der dunkle Knopf der klare Handlungspunkt. */
 .kontakt .ruf { background: var(--text); color: var(--sand-hell); border-color: var(--text); }
 .kontakt .ruf:hover { background: #241610; }
@@ -641,13 +644,16 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
     <div class="bahn auftakt-satz">
       <div>
         <h1>Craniosacral Therapie in Fulenbach</h1>
-        <p class="anriss">Sanfte Körpertherapie bei Kopfschmerzen, Verspannungen, Stress und Schlafproblemen. Seit über zwanzig Jahren in eigener Praxis, zwischen Olten und Zofingen. Jede Behandlung beginnt mit einem Gespräch.</p>
+        <p class="anriss">Sanfte Körpertherapie bei Kopfschmerzen, Verspannungen, Stress und Schlafproblemen. Seit über zwanzig Jahren selbständig, heute in Fulenbach zwischen Olten und Zofingen. Jede Behandlung beginnt mit einem Gespräch.</p>
         <div class="handlung">
           <a class="ruf" href="tel:+41622162939">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
             Anrufen, 062 216 29 39
           </a>
-          <a class="ruf-still" href="#ablauf">So läuft eine Behandlung ab</a>
+          <a class="ruf-still" href="mailto:johann.vonarb@bluewin.ch?subject=Anfrage%20Craniosacral%20Behandlung">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+            Per E-Mail anfragen
+          </a>
         </div>
       </div>
       <div class="bildplatz"><span>Platz für ein Foto</span></div>
@@ -662,7 +668,7 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
       <li>
         <svg class="zeichen" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.2 12 3.5l8.5 6.7"/><path d="M5.6 12v8.5h12.8V12"/><path d="M10 20.5v-5h4v5"/></svg>
         <strong>Über zwanzig Jahre</strong>
-        <p>Johann von Arb führt seine eigene Praxis in Fulenbach seit mehr als zwei Jahrzehnten.</p>
+        <p>Johann von Arb arbeitet seit mehr als zwei Jahrzehnten selbständig als Therapeut, heute in Fulenbach.</p>
       </li>
       <li>
         <svg class="zeichen" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="7" r="3"/><path d="M3 20.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><circle cx="17.5" cy="12.5" r="2.2"/><path d="M14 20.5c0-2 1.6-3.5 3.5-3.5s3.5 1.5 3.5 3.5"/></svg>
@@ -748,7 +754,7 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
         <p class="signatur"><strong>Craniosacral Therapeut</strong><span>Murgenthalerstrasse 8, Fulenbach</span></p>
       </div>
       <div class="satz">
-        <p>Ich führe meine Praxis in Fulenbach seit über zwanzig Jahren und begleite Menschen mit sanfter Körperarbeit. Was mich an der Craniosacral Therapie überzeugt: Sie zwingt dem Körper nichts auf, sondern gibt ihm Raum, sich selbst zu regulieren.</p>
+        <p>Ich arbeite seit über zwanzig Jahren selbständig als Craniosacral Therapeut, an verschiedenen Standorten und heute in Fulenbach. Ich begleite Menschen mit sanfter Körperarbeit. Was mich an der Craniosacral Therapie überzeugt: Sie zwingt dem Körper nichts auf, sondern gibt ihm Raum, sich selbst zu regulieren.</p>
         <p>In meiner Praxis nehme ich mir Zeit für Sie. Jede Behandlung beginnt mit einem Gespräch und richtet sich nach dem, was Ihr Körper an diesem Tag braucht. Wie lange sie dauert, ist deshalb von Mensch zu Mensch verschieden.</p>
         <p class="leise">Ein Porträt folgt, sobald es aufgenommen ist.</p>
       </div>
@@ -800,6 +806,10 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
       <a class="ruf" href="tel:+41622162939">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
         062 216 29 39 anrufen
+      </a>
+      <a class="ruf-still" href="mailto:johann.vonarb@bluewin.ch?subject=Anfrage%20Craniosacral%20Behandlung">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+        Per E-Mail anfragen
       </a>
       <dl class="karte">
         <div>
