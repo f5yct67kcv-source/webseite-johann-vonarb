@@ -432,14 +432,20 @@ h1, h2, h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  text-decoration: none;
   font-size: 0.9375rem;
   color: var(--text);
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--linie);
-  transition: border-color 0.22s, color 0.22s;
+  /* Gleicher seitlicher Abstand wie im Knopf: sonst beginnt der Text
+     weiter links als der des Knopfes, was auffaellt, sobald beide
+     untereinander stehen. Die Linie sitzt deshalb am Text und nicht
+     an der Elementkante. */
+  padding: 0.8rem calc(1.4rem + 1px);
+  text-decoration: underline;
+  text-decoration-color: var(--linie);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+  transition: text-decoration-color 0.22s, color 0.22s;
 }
-.ruf-still:hover { color: var(--zeichen); border-bottom-color: var(--zeichen); }
+.ruf-still:hover { color: var(--zeichen); text-decoration-color: var(--zeichen); }
 
 /* ---- Auftakt ---------------------------------------------------------- */
 
@@ -469,7 +475,7 @@ h1, h2, h3 {
   max-width: 44ch;
   margin: 0 0 2.5rem;
 }
-.handlung { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; }
+.handlung { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
 
 /* Der vorbereitete Bildplatz: eine gestaltete Flaeche, kein leerer Kasten.
    Sobald ein Foto da ist, wird nur das <img> eingesetzt. */
@@ -623,9 +629,9 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
   padding-block: clamp(8rem, 12vw, 10rem) clamp(2.5rem, 4vw, 3.5rem);
 }
 .kontakt .anriss { color: var(--band-leise); max-width: 44ch; margin: 0 0 2.5rem; font-size: 1.125rem; }
-.kontakt .handlung, .kontakt .ruf + .ruf-still { margin-left: 2rem; }
-@media (max-width: 30rem) { .kontakt .ruf + .ruf-still { margin-left: 0; display: flex; } }
-.kontakt .ruf-still { border-bottom-color: rgba(51, 33, 28, 0.3); }
+.kontakt .ruf + .ruf-still { margin-left: 0.5rem; }
+@media (max-width: 30rem) { .kontakt .ruf + .ruf-still { margin-left: 0; } }
+.kontakt .ruf-still { text-decoration-color: rgba(51, 33, 28, 0.35); }
 /* Auf der hellen Flaeche ist der dunkle Knopf der klare Handlungspunkt. */
 .kontakt .ruf { background: var(--text); color: var(--sand-hell); border-color: var(--text); }
 .kontakt .ruf:hover { background: #241610; }
