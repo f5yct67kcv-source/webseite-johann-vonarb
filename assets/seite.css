@@ -89,6 +89,9 @@ a:hover { text-decoration-color: var(--zeichen); }
 }
 
 .marke {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   font-family: 'Marcellus', 'Iowan Old Style', Georgia, serif;
   font-size: 1.1875rem;
   letter-spacing: 0.055em;
@@ -97,7 +100,8 @@ a:hover { text-decoration-color: var(--zeichen); }
   line-height: 1.1;
   white-space: nowrap;
 }
-.marke span {
+.marke .zeichen { height: 40px; width: auto; flex: none; color: var(--zeichen); }
+.marke small {
   display: block;
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 0.6875rem;
@@ -136,7 +140,8 @@ a:hover { text-decoration-color: var(--zeichen); }
 @media (max-width: 30rem) {
   .kopf > div { gap: 0.75rem; padding-inline: 1.25rem; }
   .kopf .marke { font-size: 1rem; letter-spacing: 0.04em; }
-  .kopf .marke span { font-size: 0.6875rem; letter-spacing: 0.13em; margin-top: 0.25rem; }
+  .kopf .marke small { font-size: 0.6875rem; letter-spacing: 0.13em; margin-top: 0.25rem; }
+  .marke .zeichen { height: 34px; }
   .kopf .ruf { padding: 0.6rem 1rem; min-height: 44px; font-size: 0.875rem; }
   .kopf .ruf svg { display: none; }
 }
