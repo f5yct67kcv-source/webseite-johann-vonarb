@@ -174,8 +174,8 @@
   --seitenende: #eddccd;
 
   /* Der Abschluss bleibt hell und im selben Terracotta wie der Knopf. */
-  --band-mitte: #e2b49c;
-  --band-tief: #d6a184;
+  --band-mitte: #ead0bd;
+  --band-tief: #e5c7b2;
   --band-leise: #4a3229;
 
   --breite: 78rem;
@@ -194,7 +194,7 @@ html {
      der Statusleiste. Eine einzige Farbe waere deshalb entweder oben
      oder unten falsch: ein festgestellter Verlauf gibt beiden Kanten
      den Ton, der dort hingehoert. */
-  background: linear-gradient(180deg, #fdf9f5 0%, #fdf9f5 45%, #d6a184 100%) fixed;
+  background: linear-gradient(180deg, #fdf9f5 0%, #fdf9f5 45%, #e5c7b2 100%) fixed;
 }
 @media (max-width: 63.999rem) { html { scroll-padding-top: 5.5rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -636,14 +636,13 @@ details .antwort { padding-bottom: 1.75rem; margin: 0; max-width: 62ch; color: v
 /* ---- Abschluss -------------------------------------------------------- */
 
 .kontakt {
-  /* Die Seite endet nicht im Dunkeln, sondern im selben hellen Terracotta
-     wie der Knopf. Die ersten 120px blenden vom Seitenton herueber, damit
-     keine Kante entsteht. */
+  /* Die Seite endet nicht im Dunkeln, sondern einen Hauch waermer als
+     der Seitenton. Der Verlauf startet durchsichtig, damit er auf dem
+     Seitengrund ohne Kante einsetzt, und wird erst unten voll. */
   background: linear-gradient(180deg,
-    var(--seitenende) 0,
-    var(--band-mitte) 120px,
-    var(--band-mitte) 55%,
-    var(--band-tief) 100%);
+    rgba(237, 220, 205, 0) 0,
+    #f0d8c7 35%,
+    var(--band-mitte) 100%);
   padding-block: clamp(8rem, 12vw, 10rem) clamp(2.5rem, 4vw, 3.5rem);
 }
 .kontakt .anriss { color: var(--band-leise); max-width: 44ch; margin: 0 0 2.5rem; font-size: 1.125rem; }
