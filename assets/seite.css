@@ -32,8 +32,8 @@
 
   /* Gleiche Rollen wie auf der Startseite: heller Knopf mit dunkler
      Schrift und feiner Kontur, satter Ton fuer alles Gezeichnete. */
-  --akzent: #e2b49c;
-  --akzent-tief: #d3a288;
+  --akzent: #ead0bd;
+  --akzent-tief: #e0c0aa;
   --akzent-kontur: #b9825f;
   --knopf-schrift: #2b1410;
   --zeichen: #b0553a;
