@@ -25,3 +25,6 @@ assets/fonts/hanken-var-italic.woff2
 
 # Arbeitsdatei der Farbwahl, hat ihren Zweck erfuellt
 varianten.html
+
+# Uebergabe-Dateien der Claude-Sessions bleiben lokal
+.claude/
